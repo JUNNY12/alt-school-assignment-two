@@ -106,7 +106,6 @@ const Users = () => {
                     <td>
                       {result.location.country}
                     </td>
-                  
                 </tr>
                 )
               })
