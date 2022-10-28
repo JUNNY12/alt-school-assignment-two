@@ -1,0 +1,156 @@
+*{
+  padding:0;
+  margin:0;
+  box-sizing: border-box;
+}
+
+nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: gray;
+}
+a{
+  text-decoration: none;
+  color: black;
+}
+ul li{
+  float: left;
+}
+h1{
+  font-size: 2rem;
+}
+
+li{
+  padding-right: 5em;
+  list-style-type: none;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+body{
+  background-color: aliceblue;
+}
+
+.container{
+  margin: 2em;
+  padding: 2em;
+}
+
+th,td{
+  padding: 2rem;
+}
+
+table{
+  border-collapse: collapse;
+  background: slategray;
+  border-radius: 8px;
+  min-width: 1150px;
+  font-weight: 600;
+}
+.active{
+  border-bottom: 2px solid white;
+}
+.header{
+  margin-bottom: 1.2rem;
+}
+thead{
+  padding-bottom: 2rem;
+}
+
+td{
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  min-width: 9rem;
+}
+
+tr{
+  transition: 0.3s linear;
+  cursor: pointer;
+}
+
+
+
+tbody tr:hover{
+  background: white; 
+  transition: 0.3s linear;
+}  
+
+.img{
+  border-radius: 50%;
+}
+
+.pagenum{
+padding: 0.5rem;
+cursor: pointer;
+border: 1px solid black;
+display: flex;
+align-items: center;
+justify-content: center;
+background: transparent;
+cursor: pointer;
+font-weight: 700;
+}
+
+.pagenum:hover{
+  background-color: slategray;
+  color:antiquewhite ;
+}
+
+
+.active{
+  background-color: slategray;
+  color: antiquewhite;
+}
+
+
+
+.paginationContainer{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 2rem;
+}
+button{
+  border: 1px soild black;
+  outline: none;
+  padding: 0.6rem;
+  margin-right: 5px;
+  background: transparent;
+  cursor: pointer;
+}
+button:hover{
+  background-color: slategray;
+  color: antiquewhite;
+}
+.next button{
+  margin-left: 5px;
+}
+
+.dot{
+  border: 1px soild black;
+  margin-right: 3px;
+  margin-left: 3px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.tableResponsive{
+  overflow: auto;
+  position: relative;
+}
+.loader{
+  text-align: center;
+  padding-top: 6rem;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.hide{
+  display: none;
+}
+@media screen and (max-width:768px){
+  .container{
+    margin: 1rem;
+    padding: 1rem;
+  }
+}
