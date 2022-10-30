@@ -4,11 +4,14 @@ import { Link, NavLink } from 'react-router-dom'
 const Nav = () => {
   return (
     <nav>
-        <h1>
-            <Link to='/'>Logo</Link>
-        </h1>
         <div>
             <ul>
+              <li>
+                <Link to='/'>
+                    Home
+                </Link>
+                </li>
+
                  <li>
                     <NavLink
                      to='/about/mission'

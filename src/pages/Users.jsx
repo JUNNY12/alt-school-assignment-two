@@ -64,57 +64,65 @@ const Users = () => {
     > &hellip; </div>
   }
 
+  let renderTable;
+
+  if (loading){
+    renderTable = <div className='loading'>Loading .....</div>
+  }
+  else{
+    renderTable = 
+    <table className='table'>
+      <thead>
+        <tr>
+          <th>Gender</th>
+          <th>Name</th>
+          <th>Image</th>
+          <th>Age</th>
+          <th>Number</th>
+          <th>Email</th>
+          <th>Location</th>
+        </tr>
+      </thead>
+      <tbody>
+    {
+      currentUsersPerPage?.map((result)=>{
+        return(
+          <tr key={result.id}>
+            <td>{result.gender}</td>
+            <td>
+              <span> {result.name.first} </span>
+              <span> {result.name.last} </span>
+            </td>
+            <td>
+              <img src={result.picture.medium} alt={result.name.first} className='img' />
+            </td>
+            <td>
+              {result.registered.age} years
+            </td>
+            <td>
+              {result.phone}
+            </td>
+            <td>
+              {result.email}
+            </td>
+            <td>
+              {result.location.country}
+            </td>
+        </tr>
+        )
+      })
+    }
+    </tbody>
+    </table>
+  }
 
   return (
     <div className='container'>
       <h1 className='header'>Users</h1>
       <div className='tableResponsive'>
-        <table className='table'>
-          <thead>
-            <tr>
-              <th>Gender</th>
-              <th>Name</th>
-              <th>Image</th>
-              <th>Age</th>
-              <th>Number</th>
-              <th>Email</th>
-              <th>Location</th>
-            </tr>
-          </thead>
-            <tbody>
-            {
-              currentUsersPerPage?.map((result)=>{
-                return(
-                  <tr key={result.id}>
-                    <td>{result.gender}</td>
-                    <td>
-                      <span> {result.name.first} </span>
-                      <span> {result.name.last} </span>
-                    </td>
-                    <td>
-                      <img src={result.picture.medium} alt={result.name.first} className='img' />
-                    </td>
-                    <td>
-                      {result.registered.age} years
-                    </td>
-                    <td>
-                      {result.phone}
-                    </td>
-                    <td>
-                      {result.email}
-                    </td>
-                    <td>
-                      {result.location.country}
-                    </td>
-                </tr>
-                )
-              })
-            }
-            </tbody>
-      
-        </table>
-
-        { response && <div className='paginationContainer'>
+        {renderTable}
+      </div>
+      { response && <div className='paginationContainer'>
         <div  className='prev'>
           <button 
           onClick={handlePrevPage}
@@ -148,8 +156,6 @@ const Users = () => {
           >Next</button>
         </div>
       </div>}
-      </div>
-    
     </div>
   )
 }
